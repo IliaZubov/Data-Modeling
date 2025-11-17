@@ -1,3 +1,5 @@
+<h1>Data Modeling Exercise</h1>
+
 <h2>Conceptual data model</h2>
 <img width="1262" height="830" alt="Screenshot 2025-11-17 133538" src="https://github.com/user-attachments/assets/c842d3a0-8848-4bad-83ac-9dd0420a09b0" />
 
