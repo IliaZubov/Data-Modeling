@@ -36,7 +36,9 @@ The data model is normalized. The design follows the main principles of database
 
 <h2>Exercise 4</h2>
 <b>When moving data from Azure PostgreSQL into Power BI, it is often best practice to perform the main transformations inside the database first. This includes creating SQL views such as a fact table (orders + order lines) and dimension tables (products with suppliers and categories). By preparing the data model in SQL rather than inside Power BI, the analytics process becomes more efficient, more manageable, and easier to maintain.</b>
+
 <p></p>
+
 Performing transformations in SQL before bringing the data into Power BI leads to:
   * Faster performance
   * Cleaner modeling
