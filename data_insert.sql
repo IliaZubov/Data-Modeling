@@ -22,10 +22,10 @@ FROM generate_series(1,40) g;
 INSERT INTO products (product_name, category_id, current_price, product_description, supplier_id)
 SELECT
     'Product ' || g AS product_name,
-    (random() * 7 + 1)::int AS category_id,         -- 1–8
-    (random() * 200 + 5)::numeric(10,2) AS price,   -- 5–205
+    (random() * 7 + 1)::int AS category_id,         
+    (random() * 200 + 5)::numeric(10,2) AS price,   
     'Description for product ' || g AS description,
-    (random() * 9 + 1)::int AS supplier_id          -- 1–10
+    (random() * 9 + 1)::int AS supplier_id          
 FROM generate_series(1,75) g;
 
 INSERT INTO product_prices (price, price_date, product_id)
@@ -37,19 +37,19 @@ FROM products p, generate_series(1,3);
 
 INSERT INTO orders (customer_id, order_date, status_id, order_total)
 SELECT
-    (random() * 39 + 1)::int,      -- customer_id 1–40
+    (random() * 39 + 1)::int,      
     NOW()::date - (random() * 365)::int,
-    (random() * 4 + 1)::int,       -- status 1–5
-    0                              -- updated later
+    (random() * 4 + 1)::int,       
+    0                              
 FROM generate_series(1,180);
 
 
 INSERT INTO order_lines (order_id, product_id, quantity, orderline_total)
 SELECT
     o.order_id,
-    (random() * 74 + 1)::int,              -- product_id 1–80
-    (random() * 4 + 1)::int AS qty,        -- 1–5 qty
-    0                                      -- updated later
+    (random() * 74 + 1)::int,              
+    (random() * 4 + 1)::int AS qty,        
+    0                                      
 FROM orders o,
      generate_series(1,(random() * 3 + 2)::int);
 
