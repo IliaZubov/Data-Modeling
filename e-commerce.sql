@@ -25,3 +25,7 @@ CREATE TABLE reviews (review_id SERIAL PRIMARY KEY, customer_id INT NOT NULL, pr
 
 CREATE TABLE order_lines (orderline_id SERIAL PRIMARY KEY, order_id INT NOT NULL, product_id INT NOT NULL, quantity INT NOT NULL, orderline_total FLOAT NOT NULL, CONSTRAINT fk_order FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE, CONSTRAINT fk_product3 FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE);
 
+/*=== Exercise 3 ===*/
+
+CREATE TABLE loyalty (loyalty_id SERIAL PRIMARY KEY, customer_id INT NOT NULL, loyalty_level VARCHAR(255) NOT NULL, start_date DATE NOT NULL, end_date DATE NOT NULL, discount INT NOT NULL DEFAULT 0, CONSTRAINT fk_customer3 FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE);
+

@@ -69,6 +69,8 @@ SET order_total = (
     WHERE order_id = o.order_id
 );
 
+/*=== Exercise 3 ===*/
+
 INSERT INTO reviews (customer_id, product_id, review, rate)
 SELECT
     (random() * 39 + 1)::int,
@@ -76,3 +78,37 @@ SELECT
     'Review for product ',
     (random() * 4 + 1)::int
 FROM generate_series(1,100);
+
+INSERT INTO loyalty (customer_id, loyalty_level, start_date, end_date, discount)
+SELECT
+    customer_id,
+    CASE
+        WHEN total_spent >= 500 THEN 'Gold'
+        WHEN total_spent >= 200 THEN 'Silver'
+        WHEN total_spent >= 50  THEN 'Bronze'
+        ELSE 'None'
+    END AS loyalty_level,
+    date_trunc('month', CURRENT_DATE) - INTERVAL '1 month' AS start_date,
+    date_trunc('month', CURRENT_DATE) - INTERVAL '1 day'   AS end_date,
+
+    CASE
+        WHEN total_spent >= 500 THEN 8
+        WHEN total_spent >= 200 THEN 5
+        WHEN total_spent >= 50  THEN 3
+        ELSE 0
+    END AS discount_percent
+
+FROM (
+    SELECT
+        c.customer_id,
+        COALESCE(SUM(o.order_total), 0) AS total_spent
+    FROM customers c
+    LEFT JOIN orders o
+        ON o.customer_id = c.customer_id
+       AND o.order_date BETWEEN
+            (date_trunc('month', CURRENT_DATE) - INTERVAL '1 month')
+            AND
+            (date_trunc('month', CURRENT_DATE) - INTERVAL '1 day')
+    GROUP BY c.customer_id
+) monthly_totals
+WHERE total_spent >= 50;
