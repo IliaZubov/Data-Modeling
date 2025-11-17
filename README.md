@@ -44,3 +44,4 @@ Performing transformations in SQL before bringing the data into Power BI leads t
   * Cleaner modeling
   * Consistent business logic
   * Less complexity inside Power BI
+<img width="1954" height="1086" alt="image" src="https://github.com/user-attachments/assets/b084b6c7-060e-48b3-b9c0-c839a04112f0" />
