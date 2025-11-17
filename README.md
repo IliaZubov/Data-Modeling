@@ -26,7 +26,8 @@ The data model is normalized. The design follows the main principles of database
 <b>A fully denormalized version would simplify some queries but would introduce major risks, including inconsistency, storage inefficiency, harder updates, and significantly more complex application logic.</b>
 
 <h2>Exercise 3</h2>
-1.<b>SCD Type 2 is used when the system must keep a full history of changes to an attribute over time:</b>
+<b>SCD Type 2 is used when the system must keep a full history of changes to an attribute over time:</b>
+
   * Customers can move between loyalty levels (Bronze → Silver → Gold, or downgrade).
   * Each loyalty tier is valid only for a specific time period.
   * We must retain past loyalty levels for accurate reporting and historical analysis.
