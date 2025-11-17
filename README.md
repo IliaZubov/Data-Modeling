@@ -12,13 +12,13 @@ The data model is normalized. The design follows the main principles of database
 <b>1st Normal Form (1NF) —</b>
   - All tables contain atomic values, each row is uniquely identifiable by a primary key, and repeating groups are separated into their own tables (e.g., order lines, product prices).
 
-<b>2nd Normal Form (2NF) —<b/>
+<b>2nd Normal Form (2NF) —</b>
   - Non-key attributes depend fully on the primary key. For example, order line quantities and totals depend on the combined context of an order and product, not on any partial key.
 
-<b>3rd Normal Form (3NF) —<b/>
+<b>3rd Normal Form (3NF) —</b>
   - Non-key attributes do not depend on other non-key attributes.
   - Product information is stored in the products table, not repeated in order lines.
   - Customer data is stored only in customers, not duplicated in orders.
   - Product prices are maintained in a separate product_prices table to avoid storing historical price changes incorrectly inside the product or order tables.
 
-<b>By separating customers, orders, order lines, suppliers, product categories, and product prices into their own tables, the model reduces redundancy and prevents update anomalies.<b/>
+<b>By separating customers, orders, order lines, suppliers, product categories, and product prices into their own tables, the model reduces redundancy and prevents update anomalies.</b>
