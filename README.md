@@ -5,3 +5,20 @@
 
 <h2>Logical data model</h2>
 <img width="1781" height="791" alt="Data Model drawio (2)" src="https://github.com/user-attachments/assets/fb3ff993-730d-4e4f-9df9-4e371e87e4af" />
+
+<h2>Exercise 2</h2>
+The data model is normalized. The design follows the main principles of database normalization:
+
+<b>1st Normal Form (1NF) —</b>
+  - All tables contain atomic values, each row is uniquely identifiable by a primary key, and repeating groups are separated into their own tables (e.g., order lines, product prices).
+
+<b>2nd Normal Form (2NF) —<b/>
+  - Non-key attributes depend fully on the primary key. For example, order line quantities and totals depend on the combined context of an order and product, not on any partial key.
+
+<b>3rd Normal Form (3NF) —<b/>
+  - Non-key attributes do not depend on other non-key attributes.
+  - Product information is stored in the products table, not repeated in order lines.
+  - Customer data is stored only in customers, not duplicated in orders.
+  - Product prices are maintained in a separate product_prices table to avoid storing historical price changes incorrectly inside the product or order tables.
+
+<b>By separating customers, orders, order lines, suppliers, product categories, and product prices into their own tables, the model reduces redundancy and prevents update anomalies.<b/>
