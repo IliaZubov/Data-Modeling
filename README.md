@@ -24,3 +24,12 @@ The data model is normalized. The design follows the main principles of database
 <b>By separating customers, orders, order lines, suppliers, product categories, and product prices into their own tables, the model reduces redundancy and prevents update anomalies.</b>
 
 <b>A fully denormalized version would simplify some queries but would introduce major risks, including inconsistency, storage inefficiency, harder updates, and significantly more complex application logic.</b>
+
+<H2>Exercise 3</H2>
+SCD Type 2 is used when the system must keep a full history of changes to an attribute over time.
+Loyalty table logic:
+  - Customers can move between loyalty levels (Bronze → Silver → Gold, or downgrade).
+  - Each loyalty tier is valid only for a specific time period.
+  - We must retain past loyalty levels for accurate reporting and historical analysis.
+
+<img width="2151" height="791" alt="Data Model drawio (6)" src="https://github.com/user-attachments/assets/b7531dab-88cd-46be-8c6e-f5c7489cc89e" />
