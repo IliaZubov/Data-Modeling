@@ -22,3 +22,5 @@ The data model is normalized. The design follows the main principles of database
   - Product prices are maintained in a separate product_prices table to avoid storing historical price changes incorrectly inside the product or order tables.
 
 <b>By separating customers, orders, order lines, suppliers, product categories, and product prices into their own tables, the model reduces redundancy and prevents update anomalies.</b>
+
+<b>A fully denormalized version would simplify some queries but would introduce major risks, including inconsistency, storage inefficiency, harder updates, and significantly more complex application logic.</b>
