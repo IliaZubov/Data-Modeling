@@ -33,3 +33,18 @@ The data model is normalized. The design follows the main principles of database
   * We must retain past loyalty levels for accurate reporting and historical analysis.
 
 <img width="2151" height="791" alt="Data Model drawio (6)" src="https://github.com/user-attachments/assets/b7531dab-88cd-46be-8c6e-f5c7489cc89e" />
+
+<h2>Exercise 4</h2>
+<b>When moving data from Azure PostgreSQL into Power BI, it is often best practice to perform the main transformations inside the database first. This includes creating SQL views such as a fact table (orders + order lines) and dimension tables (products with suppliers and categories). By preparing the data model in SQL rather than inside Power BI, the analytics process becomes more efficient, more manageable, and easier to maintain.</b>
+
+<p></p>
+
+Performing transformations in SQL before bringing the data into Power BI leads to:
+  * Faster performance
+  * Cleaner modeling
+  * Consistent business logic
+  * Less complexity inside Power BI
+<img width="1954" height="1086" alt="image" src="https://github.com/user-attachments/assets/b084b6c7-060e-48b3-b9c0-c839a04112f0" />
+
+<b>Power BI semantic model<b/>
+<img width="1463" height="1091" alt="image" src="https://github.com/user-attachments/assets/7536b923-9b5d-4e8f-a057-27b701a9a9d1" />
