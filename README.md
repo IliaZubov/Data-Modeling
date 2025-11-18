@@ -48,3 +48,8 @@ Performing transformations in SQL before bringing the data into Power BI leads t
 
 <b>Power BI semantic model<b/>
 <img width="1463" height="1091" alt="image" src="https://github.com/user-attachments/assets/7536b923-9b5d-4e8f-a057-27b701a9a9d1" />
+
+<h2>Exercise 5</h2>
+<b>Optimized query</b>
+
+<img width="1097" height="203" alt="image" src="https://github.com/user-attachments/assets/e135d854-014d-48a8-80e3-c0ee225cc182" />
